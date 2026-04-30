@@ -1,0 +1,242 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+  padding: 20px;
+}
+
+menu {
+  background: #4048529f;
+  border-radius: 10px;
+  padding: 10px 0;
+}
+
+.menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu > li {
+    position: relative; /* Necesario para posicionar el submenu */
+    display: inline-block; /* Muestra los elementos principales horizontalmente */
+    padding: 10px 25px;
+    color: white;
+    cursor: pointer;
+}
+
+.menu > li a {
+    color: white;
+    text-decoration:underline;
+}
+
+.element-disabled {
+    pointer-events: none; 
+    opacity: 0.5;         
+}
+
+.submenu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%; /* Justo debajo del elemento principal */
+    width: 100%;
+    left: 0;
+    background: #0056b3;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-width: 120px;
+}
+
+.submenu li {
+    padding: 10px;
+}
+
+.submenu li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    margin-left: 15px;
+}
+
+.menu > li:hover .submenu {
+    display: block; /* Se muestra en hover */
+}
+
+.menu > li:hover {
+    background: #0056b3;
+}
+
+.submenu li:hover {
+    background: #003f7f;
+}
+
+
+.general {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.container1, .container2, .container3 {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  padding: 20px;
+  flex: 1;
+  min-width: 300px;
+}
+
+.container1 {
+  max-width: 400px;
+}
+
+.container2 {
+  max-width: 350px;
+}
+
+.container3 {
+  max-height: 480px;
+  overflow-y: auto;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #7e117e;
+  margin-top: 50px;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 98%;
+}
+
+.footer img {
+  width: 150px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow-y: scroll;
+}
+
+th, td {
+  border: 1px solid #ccc;
+  padding: 6px;
+  text-align: left;
+}
+
+th {
+  background-color: #7e117e;
+  color: white;
+}
+
+th[data-col] {
+    cursor: pointer;
+    user-select: none;
+}
+
+th[data-col]:hover {
+    background-color: #cf11cf;
+}
+
+.controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+h2 {
+  color: #333;
+}
+
+label {
+  display: block;
+  margin: 10px 0;
+}
+
+input {
+  padding: 5px;
+  margin-left: 5px;
+  width: 100px;
+}
+
+.titulo1 {
+  padding: 0;
+  margin: 0;
+}
+
+.btnactn {
+  margin-left: 5px;
+  margin-bottom: 20px;
+  padding: 8px 12px;
+  border: none;
+  background: #007bff;
+  color: white;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+  .btnactn:hover {
+    background: #052342;
+  }
+
+.nueva-fila {
+  background-color: #1bbb40;
+  transition: background-color 0.6s ease;
+}
+
+.fila-editar {
+  background-color: #ffff80;
+  transition: background-color 0.6s ease;
+}
+
+.fila-eliminar {
+  background-color: #ff6f6f;
+  transition: background-color 0.6s ease;
+}
+
+img {
+  object-fit: fill;
+  border-radius: 5px;
+}
+
+#leyendaR {
+  color: #007bff;
+  font-weight: bold;
+}
+
+#barraContainer { 
+  width: 100%;
+  background: #ddd;
+  height: 20px;
+  display: none;
+}
+
+#barraProgreso { 
+  height: 100%; 
+  background: #4caf50; 
+  width: 0%; 
+  text-align:center; 
+  color: #fff; 
+}
+
+#leyendaT {
+  color: #008f13;
+  font-weight: bold;
+}
+
+#paginacion button {
+    margin: 2px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+#paginacion .activo {
+    background-color: #007BFF;
+    color: white;
+    font-weight: bold;
+}
