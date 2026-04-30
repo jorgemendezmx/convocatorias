@@ -10,6 +10,20 @@ menu {
   padding: 10px 0;
 }
 
+header {
+  display: flex;
+  align-items: left;
+  gap: 20px;
+}
+
+header img {
+  width: 50px;
+}
+
+header h2 {
+  color: #7e117e;
+}
+
 .menu {
     list-style: none;
     padding: 0;
