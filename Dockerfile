@@ -1,22 +1,13 @@
-FROM php:8.2-apache
+FROM php:8.2-cli
 
-# Instalar extensiones necesarias
+RUN apt-get update && apt-get install -y apache2 libapache2-mod-php
+
 RUN docker-php-ext-install pdo pdo_mysql
 
-# Desactivar TODOS los MPM explícitamente
-RUN a2dismod mpm_event || true
-RUN a2dismod mpm_worker || true
-RUN a2dismod mpm_prefork || true
+COPY . /var/www/html/
 
-# Limpiar configs activas
-RUN rm -f /etc/apache2/mods-enabled/mpm_*.load || true
-RUN rm -f /etc/apache2/mods-enabled/mpm_*.conf || true
-
-# Forzar SOLO prefork en mods-available
-RUN a2enmod mpm_prefork
-
-# Habilita mod_rewrite 
+RUN rm -rf /etc/apache2/mods-enabled/mpm_*
+RUN a2enmod php8.2
 RUN a2enmod rewrite
 
-# Copia el proyecto al servidor web
-COPY . /var/www/html/
+CMD ["apachectl", "-D", "FOREGROUND"]
