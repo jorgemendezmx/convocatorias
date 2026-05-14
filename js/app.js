@@ -10,7 +10,7 @@ let accionAct = "";
 
 $(document).ready(function () {
 
-    verificarBaseDatos();
+    //verificarBaseDatos();
 
     // Listeners de clicks en botones de funciones del panel principal
     $('#btnConvMostrar').on('click', function () {

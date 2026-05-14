@@ -1,3 +1,7 @@
 .vs/
+db/
+obsolete/
 *.suo
 *.sqlite
+*.sql
+*.php
