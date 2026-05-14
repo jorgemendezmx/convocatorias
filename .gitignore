@@ -5,3 +5,4 @@ obsolete/
 *.sqlite
 *.sql
 *.php
+.htaccess
