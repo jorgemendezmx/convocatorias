@@ -7,7 +7,7 @@ let direccionOrden = 'asc';   // dirección del orden 'asc' o 'desc'
 let idSelec = "";
 let filaSelec ="";
 let accionAct = "";
-let urlApi = "http://convocatoriasback.free.nf/api.php";
+let urlApi = "https://convocatoriasback.free.nf/api.php";
 
 $(document).ready(function () {
 
