@@ -7,6 +7,7 @@ let direccionOrden = 'asc';   // dirección del orden 'asc' o 'desc'
 let idSelec = "";
 let filaSelec ="";
 let accionAct = "";
+let urlApi = "http://convocatoriasback.free.nf/api.php";
 
 $(document).ready(function () {
 
@@ -124,7 +125,7 @@ function crearBaseDatos() {  //Función desactivada para llevar a ambiente de pr
 
 function cargarConvocatorias() {
     $.ajax({
-        url: 'api.php?action=cvc_read',
+        url: urlAApi + '?action=cvc_read',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
@@ -148,7 +149,7 @@ function cargarConvocatorias() {
 
 function cargarProveedores() {
     $.ajax({
-        url: 'api.php?action=prov_read',
+        url: urlApi + '?action=prov_read',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
@@ -536,7 +537,7 @@ function guardarConvocatoria() {
         return;
     }
 
-    fetch(`api.php?action=${actiontype}`, {
+    fetch(urlApi + `?action=${actiontype}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -598,7 +599,7 @@ function guardarProveedor() {
         return;
     }
 
-    fetch(`api.php?action=${actiontype}`, {
+    fetch(urlAApi + `?action=${actiontype}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -680,7 +681,7 @@ function confirmaEliminación(idC) {
 
 function eliminarRegistro(idC, actn) {
 
-    fetch(`api.php?action=${actn}`, {
+    fetch(urlApi + `?action=${actn}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
