@@ -125,7 +125,7 @@ function crearBaseDatos() {  //Función desactivada para llevar a ambiente de pr
 
 function cargarConvocatorias() {
     $.ajax({
-        url: urlAApi + '?action=cvc_read',
+        url: urlApi + '?action=cvc_read',
         method: 'GET',
         dataType: 'json',
         success: function (data) {
@@ -599,7 +599,7 @@ function guardarProveedor() {
         return;
     }
 
-    fetch(urlAApi + `?action=${actiontype}`, {
+    fetch(urlApi + `?action=${actiontype}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
